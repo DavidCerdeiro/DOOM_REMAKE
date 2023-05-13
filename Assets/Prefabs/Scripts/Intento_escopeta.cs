@@ -12,12 +12,12 @@ public class Intento_escopeta : MonoBehaviour
     private float divisor;
     public GameObject Atras_Arma;
     public GameObject Posicion_Arma;
-
+    
     // Start is called before the first frame update
     void Start()
     {
         proximoDisparo = 0.0f;
-        tiempoDisparo = 0.3f;
+        tiempoDisparo = 0.9f;
         tiempoesperas = 0.0035f;
         divisor = 20.0f;
     }
@@ -25,6 +25,7 @@ public class Intento_escopeta : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //Debug.Log(Time.time);
         if (Time.time >= proximoDisparo && Input.GetMouseButtonDown(0))
         {
             proximoDisparo = Time.time + tiempoDisparo;

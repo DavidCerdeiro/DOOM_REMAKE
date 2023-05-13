@@ -10,6 +10,8 @@ TagManager:
   - botiquin
   - pocion_azul
   - paquete_salud
+  - escopeta
+  - pistola
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - UI
   - player
   - map
-  - 
+  - pistola
   - 
   - 
   - 
