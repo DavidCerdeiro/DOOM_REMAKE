@@ -15,6 +15,7 @@ public class add_armor : MonoBehaviour
         Debug.Log("Picked up the megaarmor!");
     }
     if (other.gameObject.CompareTag("armor_bonus")){
+        Debug.Log("Has pillado el bonus de armadura");
     }
     }
 }
