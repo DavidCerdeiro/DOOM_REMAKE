@@ -10,9 +10,11 @@ public class Intento_escopeta : MonoBehaviour
     private float tiempoesperas;
     private float cantidadmovida;
     private float divisor;
+    private Transform salida;
     public GameObject Atras_Arma;
     public GameObject Posicion_Arma;
-    
+    public GameObject bala;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +67,8 @@ public class Intento_escopeta : MonoBehaviour
     {
         Quaternion currentRotation = transform.rotation;
 
+        salida = gameObject.transform.GetChild(0).transform;
+        GameObject nuevabala = Instantiate(bala, salida.position, salida.rotation);
         currentRotation.eulerAngles = new Vector3(currentRotation.eulerAngles.x - 0.4f, currentRotation.eulerAngles.y, currentRotation.eulerAngles.z);
         transform.rotation = currentRotation;
         yield return new WaitForSeconds(tiempoesperas);
