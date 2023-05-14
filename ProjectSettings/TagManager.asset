@@ -12,6 +12,8 @@ TagManager:
   - paquete_salud
   - escopeta
   - pistola
+  - mapa
+  - bala
   layers:
   - Default
   - TransparentFX

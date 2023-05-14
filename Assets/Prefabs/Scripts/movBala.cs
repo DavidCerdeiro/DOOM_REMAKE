@@ -9,7 +9,7 @@ public class movBala : MonoBehaviour
     public float damage;
     void Start()
     {
-        velocidad = 1.0f;
+        velocidad = 10.0f;
         damage = 1.0f;
         //this.Transform.position.z = -2.25;
     }

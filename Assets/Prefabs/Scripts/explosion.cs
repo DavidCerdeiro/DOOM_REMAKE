@@ -15,7 +15,7 @@ public class explosion : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Evitamos que al chocar con el suelo desaparezca el objeto, para que solo lo haga con el jugador
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag != "mapa")
         {
             Instantiate(prefabObjetoNuevo, transform.position, transform.rotation);
             Destroy(gameObject);
