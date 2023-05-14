@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class VidaJugador : MonoBehaviour
 {
-    public int vidaMax = 200;
-    public int vidaAct;
+    public float vidaMax = 200.0f;
+    public float vidaAct;
     public BarraVida barraVida;
     // Start is called before the first frame update
     void Start()
     {
-        vidaAct = 100;
-        barraVida.SetMaxHealth(vidaMax);
+        vidaAct = 100.0f;
+        barraVida.SetMaxHealth(200);
     }
 
     // Update is called once per frame
@@ -19,8 +19,21 @@ public class VidaJugador : MonoBehaviour
     {
         //Aqui ira los daños
     }
-    void recibirDaño(int daño){
+
+    private float maximo(float x, float y)
+    {
+        if (x < y) x = y;
+        return x;
+    }
+
+    public void recibirDaño(float daño){
+
+        float resguardo = vidaAct;        //por si acaso es botiquin o paquete de vida
+
         vidaAct -= daño;
-        barraVida.SetHealth(vidaAct);
+        int aux = Mathf.FloorToInt(vidaAct);
+        barraVida.SetHealth(aux);
+
+        if (daño < (-5.0f) && vidaAct > 100.0f) vidaAct = maximo(resguardo, 100.0f);
     }
 }
