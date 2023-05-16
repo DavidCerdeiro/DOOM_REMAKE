@@ -14,6 +14,7 @@ public class Intento_escopeta : MonoBehaviour
     public GameObject Atras_Arma;
     public GameObject Posicion_Arma;
     public GameObject bala;
+    public AudioSource disparoSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class Intento_escopeta : MonoBehaviour
         if (Time.time >= proximoDisparo && Input.GetMouseButtonDown(0))
         {
             proximoDisparo = Time.time + tiempoDisparo;
+            disparoSFX.Play();
             Debug.Log("Supuestamente se ha disparado");
             divisor = 20.0f;
             StartCoroutine(WaitMultipleTimes());

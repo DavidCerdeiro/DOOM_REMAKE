@@ -5,6 +5,7 @@ using UnityEngine;
 public class acido_script : MonoBehaviour
 {
     public VidaJugador vidaJugador;
+    private float tickAcido = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,13 @@ public class acido_script : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("Estas tocando acido");
-            vidaJugador.recibirDaño(0.1f);
+            //Hace que los ticks sean cada 1 segundo en vez de cada frame
+            if (Time.time >= tickAcido)
+            {
+                vidaJugador.recibirDaño(0.5f);
+                ++tickAcido;
+            }
+            
         }
     }
 }

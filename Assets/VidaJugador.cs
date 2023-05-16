@@ -38,7 +38,7 @@ public class VidaJugador : MonoBehaviour
         int aux = Mathf.FloorToInt(vidaAct);
         barraVida.SetHealth(aux);
 
-        if (!damageSound.isPlaying)
+        if (!damageSound.isPlaying && daño > 0 )
         {
             damageSound.Play();
         }
