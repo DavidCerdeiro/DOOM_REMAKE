@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class VidaJugador : MonoBehaviour
 {
-    public float vidaMax = 200.0f;
+    public float armorAct;
     public float vidaAct;
     public BarraVida barraVida;
+    public BarraArmadura barraArmor;
     // Start is called before the first frame update
     void Start()
     {
         vidaAct = 100.0f;
+        armorAct = 100.0f;
         barraVida.SetMaxHealth(200);
+        barraArmor.SetMaxArmor(200);
     }
 
     // Update is called once per frame
