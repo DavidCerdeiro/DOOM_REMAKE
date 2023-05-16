@@ -8,6 +8,7 @@ public class VidaJugador : MonoBehaviour
     public float vidaAct;
     public BarraVida barraVida;
     public BarraArmadura barraArmor;
+    public AudioSource damageSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,11 @@ public class VidaJugador : MonoBehaviour
         int aux = Mathf.FloorToInt(vidaAct);
         barraVida.SetHealth(aux);
 
+        if (!damageSound.isPlaying)
+        {
+            damageSound.Play();
+        }
+        
         if (daño < (-5.0f) && vidaAct > 100.0f) vidaAct = maximo(resguardo, 100.0f);
     }
 }
