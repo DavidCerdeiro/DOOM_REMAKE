@@ -45,4 +45,31 @@ public class VidaJugador : MonoBehaviour
         
         if (daño < (-5.0f) && vidaAct > 100.0f) vidaAct = maximo(resguardo, 100.0f);
     }
+
+    public void recibirDañoArmor(float daño)
+    {
+
+        float resguardo = armorAct;        //por si acaso es botiquin o paquete de vida
+
+        armorAct -= daño;
+        float armorFinal = maximo(armorAct, 0.0f);
+        int aux = Mathf.FloorToInt(armorAct);
+        barraArmor.SetArmor(aux);
+
+        if(armorAct < 0) recibirDaño((resguardo - armorFinal) * 0.66f + armorAct);
+        
+        else recibirDaño((resguardo - armorFinal) * 0.66f);
+
+        armorAct = armorFinal;
+    }
+
+    public void recibirArmor(float aux)
+    {
+        armorAct = armorAct + aux;
+        int subir = Mathf.FloorToInt(armorAct);
+        barraVida.SetHealth(subir);
+    }
+
+
+
 }
