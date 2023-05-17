@@ -56,7 +56,7 @@ public class VidaJugador : MonoBehaviour
         int aux = Mathf.FloorToInt(armorAct);
         barraArmor.SetArmor(aux);
 
-        if(armorAct < 0) recibirDaño((resguardo - armorFinal) * 0.66f + armorAct);
+        if(armorAct < 0) recibirDaño((resguardo - armorFinal) * 0.66f - armorAct);
         
         else recibirDaño((resguardo - armorFinal) * 0.66f);
 
