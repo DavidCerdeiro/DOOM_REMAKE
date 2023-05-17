@@ -18,8 +18,7 @@ public class FormerHuman : MonoBehaviour
     public AudioSource detectadoSFX;
 
     private float tiempoGrito;
-    private bool seen = false;
-
+ 
     bool detected = false;
 
 
@@ -83,7 +82,8 @@ public class FormerHuman : MonoBehaviour
     private void perseguir() 
     {
         pathfinder.SetDestination(player.transform.position);
-        animator.SetBool("Run",true);        
+        animator.SetBool("Run",true);   
+        transform.LookAt(player.transform.position);     
     }
 
     private bool enRango()
@@ -127,7 +127,7 @@ public class FormerHuman : MonoBehaviour
         {
             animator.SetBool("Run", true);
             animator.SetBool("Disparo",false);
-            //transform.LookAt(player.transform.position);
+            transform.LookAt(player.transform.position);
             pathfinder.SetDestination(point);
         }
     }
