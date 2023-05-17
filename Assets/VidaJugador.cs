@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VidaJugador : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class VidaJugador : MonoBehaviour
     public BarraVida barraVida;
     public BarraArmadura barraArmor;
     public AudioSource damageSound;
+    public Image img;
+    public Sprite[] caras;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +20,7 @@ public class VidaJugador : MonoBehaviour
         armorAct = 100.0f;
         barraVida.SetMaxHealth(200);
         barraArmor.SetMaxArmor(200);
+        cambioCara(vidaAct);
     }
 
     // Update is called once per frame
@@ -44,6 +49,7 @@ public class VidaJugador : MonoBehaviour
         }
         
         if (daño < (-5.0f) && vidaAct > 100.0f) vidaAct = maximo(resguardo, 100.0f);
+        cambioCara(vidaAct);
     }
 
     public void recibirDañoArmor(float daño)
@@ -69,7 +75,25 @@ public class VidaJugador : MonoBehaviour
         int subir = Mathf.FloorToInt(armorAct);
         barraVida.SetHealth(subir);
     }
-
+    public void cambioCara(float vida){
+        if(vida == 100){
+            img.sprite = caras[4];
+        }else{
+            if(vida < 75 && vida > 50){
+                img.sprite = caras[2];
+            }else{
+                if(vida > 25 && vida < 50){
+                    img.sprite = caras[2];
+                }else{
+                    if(vida > 0){
+                        img.sprite = caras[3];
+                    }else{
+                        img.sprite = caras[0];
+                    }
+                }
+            }
+        }
+    }
 
 
 }

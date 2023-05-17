@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1174037052690348430}
   - component: {fileID: 4861509430850274679}
   - component: {fileID: 1160978438752435822}
-  - component: {fileID: 4531504296739077006}
+  - component: {fileID: 1310863441082432156}
   m_Layer: 0
   m_Name: paquete de salud
   m_TagString: paquete_salud
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.9540792, y: 2.5032947, z: 0.4149846}
   m_Center: {x: 0, y: 1.2310425, z: 0.20749219}
---- !u!114 &4531504296739077006
+--- !u!114 &1310863441082432156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,3 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00eb396882c4e7478470cbe2f3e0f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 0}
