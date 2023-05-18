@@ -6,7 +6,7 @@ public class Difficulty : MonoBehaviour
 {
     public static Difficulty Instance;
 
-    [SerializeField] private float dificultad;
+    [SerializeField] public float dificultad;
     // Start is called before the first frame update
     private void Awake() 
     {

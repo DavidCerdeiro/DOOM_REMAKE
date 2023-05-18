@@ -16,6 +16,7 @@ TagManager:
   - bala
   - Fire
   - Enemigo
+  - itempickup sfx
   layers:
   - Default
   - TransparentFX

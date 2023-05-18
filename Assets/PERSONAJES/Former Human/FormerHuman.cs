@@ -12,7 +12,7 @@ public class FormerHuman : MonoBehaviour
     public LayerMask targetPlayer;
     public LayerMask obstacleMask;
 
-    public GameObject player;
+    private GameObject player;
 
     public AudioSource disparoSFX;
     public AudioSource detectadoSFX;
@@ -36,6 +36,7 @@ public class FormerHuman : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        player = GameObject.FindWithTag("Player");
         pathfinder = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
