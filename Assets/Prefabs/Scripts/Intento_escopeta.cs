@@ -73,6 +73,13 @@ public class Intento_escopeta : MonoBehaviour
 
         salida = gameObject.transform.GetChild(0).transform;
         GameObject nuevabala = Instantiate(bala, salida.position, salida.rotation);
+        if (gameObject.CompareTag("escopeta"))
+        {
+            GameObject nuevabala2 = Instantiate(bala, salida.position, salida.rotation);
+            GameObject nuevabala3 = Instantiate(bala, salida.position, salida.rotation);
+            GameObject nuevabala4 = Instantiate(bala, salida.position, salida.rotation);
+        }
+
         currentRotation.eulerAngles = new Vector3(currentRotation.eulerAngles.x - 0.4f, currentRotation.eulerAngles.y, currentRotation.eulerAngles.z);
         transform.rotation = currentRotation;
         yield return new WaitForSeconds(tiempoesperas);

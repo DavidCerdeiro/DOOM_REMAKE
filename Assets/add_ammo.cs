@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class add_ammo : MonoBehaviour
 {
+    public imagenMuni imagen;
     private int municion;
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other)
@@ -13,6 +14,7 @@ public class add_ammo : MonoBehaviour
             //Mensaje original del juego al coger esta armadura
             Debug.Log("municion de escopeta");
             municion++;
+            imagen.actualizar(municion);
         }
     }
 
@@ -21,6 +23,7 @@ public class add_ammo : MonoBehaviour
         if (municion > 0)
         {
             municion--;
+            imagen.actualizar(municion);
             return true;
         }
         else return false;
