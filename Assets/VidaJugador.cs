@@ -71,9 +71,11 @@ public class VidaJugador : MonoBehaviour
 
     public void recibirArmor(float aux)
     {
-        armorAct = armorAct + aux;
+        if (aux == 1.0f) armorAct = armorAct + aux;
+        else armorAct = maximo(aux, armorAct);
+
         int subir = Mathf.FloorToInt(armorAct);
-        barraVida.SetHealth(subir);
+        barraArmor.SetArmor(subir);
     }
     public void cambioCara(float vida){
         if(vida == 100){

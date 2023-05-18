@@ -21,11 +21,11 @@ public class add_armor : MonoBehaviour
         //Mensaje original del juego al coger esta armadura
         Debug.Log("Picked up the megaarmor!");
         tmarmor.gameObject.SetActive(true);
-        vidaJugador.recibirArmor(100.0f);
+        vidaJugador.recibirArmor(200.0f);
         StartCoroutine(desactiva_megaarmor());
     }
     if (other.gameObject.CompareTag("armor_bonus")){
-        vidaJugador.recibirArmor(100.0f);
+        vidaJugador.recibirArmor(1.0f);
     }
     if (other.gameObject.CompareTag("Fire"))
     {

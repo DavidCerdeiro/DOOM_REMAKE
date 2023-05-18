@@ -15,12 +15,14 @@ public class Intento_escopeta : MonoBehaviour
     public GameObject Posicion_Arma;
     public GameObject bala;
     public AudioSource disparoSFX;
+    public add_ammo municion;
 
     // Start is called before the first frame update
     void Start()
     {
         proximoDisparo = 0.0f;
-        tiempoDisparo = 0.9f;
+        if (gameObject.CompareTag("pistola")) tiempoDisparo = 0.1f;
+        else tiempoDisparo = 0.5f;
         tiempoesperas = 0.0035f;
         divisor = 20.0f;
     }
@@ -29,7 +31,7 @@ public class Intento_escopeta : MonoBehaviour
     void FixedUpdate()
     {
         //Debug.Log(Time.time);
-        if (Time.time >= proximoDisparo && Input.GetMouseButtonDown(0))
+        if (Time.time >= proximoDisparo && Input.GetMouseButtonDown(0) && (gameObject.CompareTag("pistola") || (gameObject.CompareTag("escopeta") && municion.CogerMunicion())))
         {
             proximoDisparo = Time.time + tiempoDisparo;
             disparoSFX.Play();
