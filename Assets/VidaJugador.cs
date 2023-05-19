@@ -40,8 +40,6 @@ public class VidaJugador : MonoBehaviour
         float resguardo = vidaAct;        //por si acaso es botiquin o paquete de vida
 
         vidaAct -= daño;
-        int aux = Mathf.FloorToInt(vidaAct);
-        barraVida.SetHealth(aux);
 
         if (!damageSound.isPlaying && daño > 0 )
         {
@@ -49,6 +47,8 @@ public class VidaJugador : MonoBehaviour
         }
         
         if (daño < (-5.0f) && vidaAct > 100.0f) vidaAct = maximo(resguardo, 100.0f);
+        int aux = Mathf.FloorToInt(vidaAct);
+        barraVida.SetHealth(aux);
         cambioCara(vidaAct);
     }
 

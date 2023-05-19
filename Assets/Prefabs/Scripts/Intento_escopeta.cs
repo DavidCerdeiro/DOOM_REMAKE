@@ -21,8 +21,8 @@ public class Intento_escopeta : MonoBehaviour
     void Start()
     {
         proximoDisparo = 0.0f;
-        if (gameObject.CompareTag("pistola")) tiempoDisparo = 0.1f;
-        else tiempoDisparo = 0.5f;
+        if (gameObject.CompareTag("pistola")) tiempoDisparo = 0.8f;
+        else tiempoDisparo = 1.5f;
         tiempoesperas = 0.0035f;
         divisor = 20.0f;
     }
@@ -31,7 +31,8 @@ public class Intento_escopeta : MonoBehaviour
     void FixedUpdate()
     {
         //Debug.Log(Time.time);
-        if (Time.time >= proximoDisparo && Input.GetMouseButtonDown(0) && (gameObject.CompareTag("pistola") || (gameObject.CompareTag("escopeta") && municion.CogerMunicion())))
+        if(Input.GetMouseButton(0))
+        if (Time.time >= proximoDisparo && (gameObject.CompareTag("pistola") || (gameObject.CompareTag("escopeta") && municion.CogerMunicion())))
         {
             proximoDisparo = Time.time + tiempoDisparo;
             disparoSFX.Play();
