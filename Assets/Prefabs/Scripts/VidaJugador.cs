@@ -12,7 +12,10 @@ public class VidaJugador : MonoBehaviour
     public AudioSource damageSound;
     public Image img;
     public Sprite[] caras;
-
+    public Text textomuerte;
+    public Button reinicio;
+    public Button menu;
+    public Camera camara_muerte;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +31,13 @@ public class VidaJugador : MonoBehaviour
     {
         //Aqui ira los daños
     }
-
+    //Función auxiliar
     private float maximo(float x, float y)
     {
         if (x < y) x = y;
         return x;
     }
-
+    //Gestionamos el daño directo a la salud
     public void recibirDaño(float daño){
 
         float resguardo = vidaAct;        //por si acaso es botiquin o paquete de vida
@@ -51,7 +54,7 @@ public class VidaJugador : MonoBehaviour
         barraVida.SetHealth(aux);
         cambioCara(vidaAct);
     }
-
+    //Gestionamos el daño para la armadura
     public void recibirDañoArmor(float daño)
     {
 
@@ -68,7 +71,7 @@ public class VidaJugador : MonoBehaviour
 
         armorAct = armorFinal;
     }
-
+    //Aumentamos la armadura
     public void recibirArmor(float aux)
     {
         if (aux == 1.0f) armorAct = armorAct + aux;
@@ -77,6 +80,7 @@ public class VidaJugador : MonoBehaviour
         int subir = Mathf.FloorToInt(armorAct);
         barraArmor.SetArmor(subir);
     }
+    //Hacemos los cambios de cara según cambie la vida
     public void cambioCara(float vida){
         if(vida == 100){
             img.sprite = caras[4];
@@ -91,11 +95,19 @@ public class VidaJugador : MonoBehaviour
                         img.sprite = caras[3];
                     }else{
                         img.sprite = caras[0];
+                        camara_muerte.gameObject.SetActive(true);
+                        StartCoroutine(muerte_espera());
                     }
                 }
             }
         }
     }
-
+    //Con esta función mostramos los botones para reiniciar el nivel, volver al menú y el texto de muerte
+    IEnumerator muerte_espera(){
+        yield return new WaitForSeconds(3);
+        textomuerte.gameObject.SetActive(true);
+        reinicio.gameObject.SetActive(true);
+        menu.gameObject.SetActive(true);
+    }
 
 }

@@ -47,4 +47,7 @@ public class MenuPrincipal : MonoBehaviour
         Difficulty.Instance.seleccionarDificultad(3f);
         SceneManager.LoadScene("E1M1");
     }
+    public void Controles(){
+        SceneManager.LoadScene("Controles");
+    }
 }
