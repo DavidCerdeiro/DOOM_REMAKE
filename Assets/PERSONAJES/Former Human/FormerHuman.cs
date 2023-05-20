@@ -58,6 +58,32 @@ public class FormerHuman : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other) 
+    {
+        if (other.CompareTag("bala"))
+        {
+            dañoSXF.Play();
+            --vida;
+            Debug.Log("Tocado");
+            if (!detectado())
+            {
+                transform.LookAt(player.transform.position);
+            }
+            if (vida <= 0)
+            {
+                muerto = true;
+                animator.SetBool("Muerto",true);
+                pathfinder.isStopped = true;
+                Invoke(nameof(Destruir), 2.0f);
+            }
+        }
+    }  
+
+    private void Destruir() 
+    {
+        Destroy(gameObject);
+    } 
+
     private bool detectado()
     {
         Vector3 playerTarget = (player.transform.position - transform.position).normalized;
@@ -154,29 +180,4 @@ public class FormerHuman : MonoBehaviour
         return false;
     }
 
-    private void OnTriggerEnter(Collider other) 
-    {
-        if (other.CompareTag("bala"))
-        {
-            dañoSXF.Play();
-            --vida;
-            Debug.Log("Tocado");
-            if (!detectado())
-            {
-                transform.LookAt(player.transform.position);
-            }
-            if (vida <= 0)
-            {
-                muerto = true;
-                animator.SetBool("Muerto",true);
-                pathfinder.isStopped = true;
-                Invoke(nameof(Destruir), 2.0f);
-            }
-        }
-    }  
-
-    private void Destruir() 
-    {
-        Destroy(gameObject);
-    } 
 }
