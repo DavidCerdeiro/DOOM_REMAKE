@@ -6,6 +6,7 @@ public class Spawners : MonoBehaviour
 {
     public GameObject player;
     public GameObject enemy;
+
     public float dificultad;
     private bool creado = false;
     // Update is called once per frame
@@ -23,8 +24,8 @@ public class Spawners : MonoBehaviour
                 }
             }
             else
-            Debug.Log(dificultad);
+                Destroy(this.gameObject);
         }
-        else Destroy(this);
+        else Destroy(this.gameObject);
     }
 }

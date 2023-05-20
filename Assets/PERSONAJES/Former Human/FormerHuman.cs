@@ -12,8 +12,12 @@ public class FormerHuman : MonoBehaviour
     public LayerMask targetPlayer;
     public LayerMask obstacleMask;
 
-    private GameObject player;
+    public GameObject player;
 
+    public float vida;
+    public bool muerto = false;
+
+    public AudioSource dañoSXF;
     public AudioSource disparoSFX;
     public AudioSource detectadoSFX;
 
@@ -36,20 +40,22 @@ public class FormerHuman : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        player = GameObject.FindWithTag("Player");
         pathfinder = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (detectado() && !enRango())
-            perseguir();
-        else if (detectado() && enRango())
-            if (!alreadyAttacked)
-                atacar();
-            else 
-                Invoke(nameof(esquivar),tiempoDisparo);
+        if (!muerto)
+        {
+            if (detectado() && !enRango())
+                perseguir();
+            else if (detectado() && enRango())
+                if (!alreadyAttacked)
+                    atacar();
+                else 
+                    Invoke(nameof(esquivar),tiempoDisparo);
+        }
     }
 
     private bool detectado()
@@ -147,4 +153,26 @@ public class FormerHuman : MonoBehaviour
         result = Vector3.zero;
         return false;
     }
+
+    private void OnTriggerEnter(Collider other) 
+    {
+        if (other.CompareTag("bala"))
+        {
+            dañoSXF.Play();
+            --vida;
+            Debug.Log("Tocado");
+            if (vida <= 0)
+            {
+                muerto = true;
+                animator.SetBool("Muerto",true);
+                pathfinder.isStopped = true;
+                Invoke(nameof(Destruir), 2.0f);
+            }
+        }
+    }  
+
+    private void Destruir() 
+    {
+        Destroy(gameObject);
+    } 
 }
