@@ -161,6 +161,10 @@ public class FormerHuman : MonoBehaviour
             dañoSXF.Play();
             --vida;
             Debug.Log("Tocado");
+            if (!detectado())
+            {
+                transform.LookAt(player.transform.position);
+            }
             if (vida <= 0)
             {
                 muerto = true;
