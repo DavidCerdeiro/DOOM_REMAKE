@@ -30,7 +30,7 @@ public class puerta : MonoBehaviour
     {
         int i = 0;
 
-        while(i < 200)
+        while(i < 400)
         {
             transform.position = transform.position + new Vector3(0.0f, 0.0015f, 0.0f);
             yield return new WaitForSeconds(0.0035f);
