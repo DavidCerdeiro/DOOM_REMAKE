@@ -20,8 +20,8 @@ public class VidaJugador : MonoBehaviour
 
     void Start()
     {
-        vidaAct = 100.0f;
-        armorAct = 100.0f;
+        vidaAct = GameManager.Instance.armor;
+        armorAct = GameManager.Instance.vida;
         barraVida.SetMaxHealth(200);
         barraArmor.SetMaxArmor(200);
         cambioCara(vidaAct);
@@ -54,6 +54,8 @@ public class VidaJugador : MonoBehaviour
         int aux = Mathf.FloorToInt(vidaAct);
         barraVida.SetHealth(aux);
         cambioCara(vidaAct);
+        GameManager.Instance.armor = armorAct;
+        GameManager.Instance.vida = vidaAct;
     }
     //Gestionamos el daño para la armadura
     public void recibirDañoArmor(float daño)
@@ -80,19 +82,20 @@ public class VidaJugador : MonoBehaviour
 
         int subir = Mathf.FloorToInt(armorAct);
         barraArmor.SetArmor(subir);
+        GameManager.Instance.armor = armorAct;
     }
     //Hacemos los cambios de cara según cambie la vida
     public void cambioCara(float vida){
-        if(vida == 100){
+        if(vida >= 100.0f){
             img.sprite = caras[4];
         }else{
-            if(vida < 75 && vida > 50){
+            if(vida < 75.0f && vida > 50.0f){
                 img.sprite = caras[2];
             }else{
-                if(vida > 25 && vida < 50){
+                if(vida > 25.0f && vida < 50.0f){
                     img.sprite = caras[2];
                 }else{
-                    if(vida > 0){
+                    if(vida > 0.0f){
                         img.sprite = caras[3];
                     }else{
                         img.sprite = caras[0];

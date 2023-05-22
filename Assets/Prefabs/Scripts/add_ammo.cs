@@ -7,6 +7,13 @@ public class add_ammo : MonoBehaviour
     public imagenMuni imagen;
     private int municion;
     // Start is called before the first frame update
+
+    void Start()
+    {
+        municion = GameManager.Instance.municion;
+        //imagen.actualizar(municion);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("municion"))
