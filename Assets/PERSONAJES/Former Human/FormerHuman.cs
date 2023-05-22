@@ -84,6 +84,23 @@ public class FormerHuman : MonoBehaviour
                 Invoke(nameof(Destruir), 2.0f);
             }
         }
+        if (other.CompareTag("Fire"))
+        {
+            dañoSXF.Play();
+            vida = 0;
+            Debug.Log("Tocado");
+            if (!detectado())
+            {
+                transform.LookAt(player.transform.position);
+            }
+            if (vida <= 0)
+            {
+                muerto = true;
+                animator.SetBool("Muerto", true);
+                pathfinder.isStopped = true;
+                Invoke(nameof(Destruir), 2.0f);
+            }
+        }
     }  
 
     private void Destruir() 
