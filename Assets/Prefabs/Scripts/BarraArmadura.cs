@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class BarraArmadura : MonoBehaviour
 {
     public Slider slider;
-    public void SetMaxArmor(int armor){
+    public void SetMaxArmor(float armor){
         slider.maxValue = armor;
         slider.value = armor/2;
     }
-    public void SetArmor(int armor){
+    public void SetArmor(float armor){
         slider.value = armor;
     }
 }

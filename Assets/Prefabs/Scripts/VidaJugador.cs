@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class VidaJugador : MonoBehaviour
 {
-    public float armorAct;
-    public float vidaAct;
+    private float armorAct;
+    private float vidaAct;
     public BarraVida barraVida;
     public BarraArmadura barraArmor;
     public AudioSource damageSound;
@@ -25,10 +25,8 @@ public class VidaJugador : MonoBehaviour
         barraVida.SetMaxHealth(200);
         barraArmor.SetMaxArmor(200);
         cambioCara(vidaAct);
-        int aux = Mathf.FloorToInt(vidaAct);
-        barraVida.SetHealth(aux);
-        aux = Mathf.FloorToInt(armorAct);
-        barraArmor.SetArmor(aux);
+        barraVida.SetHealth(100);
+        barraArmor.SetArmor(100);
     }
 
     // Update is called once per frame
@@ -112,7 +110,8 @@ public class VidaJugador : MonoBehaviour
     }
     //Con esta función mostramos los botones para reiniciar el nivel, volver al menú y el texto de muerte
     IEnumerator muerte_espera(){
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
+         this.gameObject.SetActive(false);
         textomuerte.gameObject.SetActive(true);
         reinicio.gameObject.SetActive(true);
         menu.gameObject.SetActive(true);
