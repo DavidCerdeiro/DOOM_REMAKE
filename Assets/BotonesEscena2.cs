@@ -1,8 +1,8 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine;
 
-public class botones : MonoBehaviour
+public class BotonesEscena2 : MonoBehaviour
 {
     public Button reinicio;
     public Button menu;
@@ -15,9 +15,9 @@ public class botones : MonoBehaviour
     //Mapa en el que nos encontramos
     void CargaMapa()
     {
-        SceneManager.LoadScene("E1M1");
+        SceneManager.LoadScene("E1M2");
     }
-    //Menú principal
+    //Volvemos al menú principal
     void CargaMenu()
     {
         SceneManager.LoadScene("Menu");
