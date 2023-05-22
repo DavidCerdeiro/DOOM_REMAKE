@@ -521,7 +521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1441075452672952712, guid: 247f382bd4fa3cf4baf71f8501f56761, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.584002
+      value: -8.4
       objectReference: {fileID: 0}
     - target: {fileID: 1441075452672952712, guid: 247f382bd4fa3cf4baf71f8501f56761, type: 3}
       propertyPath: m_LocalPosition.z
@@ -60114,7 +60114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1441075452672952712, guid: 247f382bd4fa3cf4baf71f8501f56761, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07599926
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 1441075452672952712, guid: 247f382bd4fa3cf4baf71f8501f56761, type: 3}
       propertyPath: m_LocalPosition.z
@@ -60192,7 +60192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1441075452672952712, guid: 247f382bd4fa3cf4baf71f8501f56761, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07599926
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1441075452672952712, guid: 247f382bd4fa3cf4baf71f8501f56761, type: 3}
       propertyPath: m_LocalPosition.z
@@ -61145,6 +61145,30 @@ PrefabInstance:
       propertyPath: camara_muerte
       value: 
       objectReference: {fileID: 765713688}
+    - target: {fileID: 2060923998, guid: 97103fb5c9ef5574e9841dd43c3508c2, type: 3}
+      propertyPath: caras.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2060923998, guid: 97103fb5c9ef5574e9841dd43c3508c2, type: 3}
+      propertyPath: caras.Array.data[0]
+      value: 
+      objectReference: {fileID: 395712316, guid: e982d0ebc3fe2f84aadc1299d79736d4, type: 3}
+    - target: {fileID: 2060923998, guid: 97103fb5c9ef5574e9841dd43c3508c2, type: 3}
+      propertyPath: caras.Array.data[1]
+      value: 
+      objectReference: {fileID: -52408532, guid: e982d0ebc3fe2f84aadc1299d79736d4, type: 3}
+    - target: {fileID: 2060923998, guid: 97103fb5c9ef5574e9841dd43c3508c2, type: 3}
+      propertyPath: caras.Array.data[2]
+      value: 
+      objectReference: {fileID: 330914599, guid: e982d0ebc3fe2f84aadc1299d79736d4, type: 3}
+    - target: {fileID: 2060923998, guid: 97103fb5c9ef5574e9841dd43c3508c2, type: 3}
+      propertyPath: caras.Array.data[3]
+      value: 
+      objectReference: {fileID: 531411497, guid: e982d0ebc3fe2f84aadc1299d79736d4, type: 3}
+    - target: {fileID: 2060923998, guid: 97103fb5c9ef5574e9841dd43c3508c2, type: 3}
+      propertyPath: caras.Array.data[4]
+      value: 
+      objectReference: {fileID: -940085143, guid: e982d0ebc3fe2f84aadc1299d79736d4, type: 3}
     - target: {fileID: 976717088564627162, guid: 97103fb5c9ef5574e9841dd43c3508c2, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -61514,7 +61538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1441075452672952712, guid: 247f382bd4fa3cf4baf71f8501f56761, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.394001
+      value: -4.27
       objectReference: {fileID: 0}
     - target: {fileID: 1441075452672952712, guid: 247f382bd4fa3cf4baf71f8501f56761, type: 3}
       propertyPath: m_LocalPosition.z
