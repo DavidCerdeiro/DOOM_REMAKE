@@ -25,6 +25,8 @@ public class FormerHuman : MonoBehaviour
  
     bool detected = false;
 
+    private bool disparando = false;
+
 
     UnityEngine.AI.NavMeshAgent pathfinder;
 
@@ -46,7 +48,12 @@ public class FormerHuman : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!muerto)
+        if (muerto || disparando)
+        {
+            Debug.Log(disparando);
+            pathfinder.SetDestination(this.transform.position);
+        }
+        else
         {
             if (detectado() && !enRango())
                 perseguir();
@@ -129,21 +136,37 @@ public class FormerHuman : MonoBehaviour
 
     private void atacar()
     {
-        //Make sure enemy doesn't move
-        pathfinder.SetDestination(transform.position);
-        animator.SetBool("Run",false);
-
-        transform.LookAt(player.transform.position);
-
         if (!alreadyAttacked)
         {
+            disparando = true;
+            animator.SetBool("Run",false);
             animator.SetBool("Disparo", true);
-            //Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            disparoSFX.Play();
-            Debug.Log("pium");
+            transform.LookAt(player.transform.position);
             alreadyAttacked = true;
+            Invoke(nameof(terminardisparo), 0.24f);
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
+    }
+
+    public void disparoAnimationEvent()
+    {
+        StartCoroutine("disparo");
+    }
+
+    public void disparo()
+    {
+        disparoSFX.Play();
+        Debug.Log("pium");
+    }
+
+    public void terminardisparoAnimEv()
+    {
+        StartCoroutine("terminardisparo");
+    }
+
+    public void terminardisparo()
+    {
+        disparando = false;
     }
 
     private void ResetAttack()
