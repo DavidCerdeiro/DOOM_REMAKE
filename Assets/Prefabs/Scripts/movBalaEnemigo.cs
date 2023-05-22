@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,11 +6,13 @@ public class movBalaEnemigo : MonoBehaviour
 {
     private GameObject jugador;
     public float velocidad;
+    private VidaJugador vidaJugador;
     // Start is called before the first frame update
     void Start()
     {
         jugador = GameObject.FindWithTag("Player");
         velocidad = 20.0f;
+        vidaJugador = jugador.GetComponent<VidaJugador>();
     }
 
     void Update()
@@ -24,6 +26,7 @@ public class movBalaEnemigo : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("he chocado con el jugador");
+            vidaJugador.recibirDañoArmor(20.0f);
         }
     }
 }
