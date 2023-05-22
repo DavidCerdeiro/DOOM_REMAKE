@@ -20,11 +20,15 @@ public class VidaJugador : MonoBehaviour
 
     void Start()
     {
-        vidaAct = 100.0f;
-        armorAct = 0.0f;
+        vidaAct = GameManager.Instance.vida;
+        armorAct = GameManager.Instance.armor;
         barraVida.SetMaxHealth(200);
         barraArmor.SetMaxArmor(200);
         cambioCara(vidaAct);
+        int aux = Mathf.FloorToInt(vidaAct);
+        barraVida.SetHealth(aux);
+        aux = Mathf.FloorToInt(armorAct);
+        barraArmor.SetArmor(aux);
     }
 
     // Update is called once per frame

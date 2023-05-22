@@ -36498,7 +36498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jugador: {fileID: 2060923980}
-  doorSFX: {fileID: 0}
+  doorSFX: {fileID: 976717088153590372}
 --- !u!65 &1785781939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38260,6 +38260,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97103fb5c9ef5574e9841dd43c3508c2, type: 3}
+--- !u!82 &976717088153590372 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 976717088557744922, guid: 97103fb5c9ef5574e9841dd43c3508c2, type: 3}
+  m_PrefabInstance: {fileID: 976717088153590371}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1441075452737638472
 PrefabInstance:
   m_ObjectHideFlags: 0
