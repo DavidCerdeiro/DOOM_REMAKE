@@ -159,12 +159,7 @@ public class FormerHuman : MonoBehaviour
         Debug.Log("pium");
     }
 
-    public void terminardisparoAnimEv()
-    {
-        StartCoroutine("terminardisparo");
-    }
-
-    public void terminardisparo()
+    private void terminardisparo()
     {
         disparando = false;
     }
