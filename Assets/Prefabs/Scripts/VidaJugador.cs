@@ -97,7 +97,7 @@ public class VidaJugador : MonoBehaviour
                 img.sprite = caras[2];
             }else{
                 if(vida > 25.0f && vida < 50.0f){
-                    img.sprite = caras[2];
+                    img.sprite = caras[1];
                 }else{
                     if(vida > 0.0f){
                         img.sprite = caras[3];
