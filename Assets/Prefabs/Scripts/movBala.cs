@@ -7,6 +7,7 @@ public class movBala : MonoBehaviour
     // Start is called before the first frame update
     public float velocidad;
     public float damage;
+    
     void Start()
     {
         velocidad = 10.0f;

@@ -35,7 +35,8 @@ public class FormerHuman : MonoBehaviour
     public float timeBetweenAttacks;
     private float tiempoDisparo = 1f;
     bool alreadyAttacked = false; 
-    public GameObject projectile;
+    public GameObject bala;
+    public GameObject pistola;
 
 
     // Start is called before the first frame update
@@ -50,7 +51,6 @@ public class FormerHuman : MonoBehaviour
     {
         if (muerto || disparando)
         {
-            Debug.Log(disparando);
             pathfinder.SetDestination(this.transform.position);
         }
         else
@@ -156,7 +156,7 @@ public class FormerHuman : MonoBehaviour
     public void disparo()
     {
         disparoSFX.Play();
-        Debug.Log("pium");
+        Instantiate(bala, pistola.transform.position, transform.rotation);
     }
 
     private void terminardisparo()
@@ -166,7 +166,6 @@ public class FormerHuman : MonoBehaviour
 
     private void ResetAttack()
     {
-        Debug.Log("juuju");
         alreadyAttacked = false;
     }
 
