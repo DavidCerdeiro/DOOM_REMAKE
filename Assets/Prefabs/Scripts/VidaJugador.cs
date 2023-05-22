@@ -17,6 +17,12 @@ public class VidaJugador : MonoBehaviour
     public Button menu;
     public Camera camara_muerte;
     // Start is called before the first frame update
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         vidaAct = 100.0f;
