@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Imp : MonoBehaviour
 {
-    public float viewRadius;
+public float viewRadius;
     public float viewAngle;
     public float range;
 
@@ -15,7 +15,7 @@ public class Imp : MonoBehaviour
     public GameObject player;
 
     public float vida;
-    private bool muerto = false;
+    public bool muerto = false;
 
     public AudioSource dañoSXF;
     public AudioSource disparoSFX;
@@ -25,6 +25,8 @@ public class Imp : MonoBehaviour
  
     bool detected = false;
 
+    private bool disparando = false;
+
 
     UnityEngine.AI.NavMeshAgent pathfinder;
 
@@ -33,7 +35,8 @@ public class Imp : MonoBehaviour
     public float timeBetweenAttacks;
     private float tiempoDisparo = 1f;
     bool alreadyAttacked = false; 
-    public GameObject projectile;
+    public GameObject mano;
+    public GameObject fuego;
 
 
     // Start is called before the first frame update
@@ -46,7 +49,11 @@ public class Imp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!muerto)
+        if (muerto || disparando)
+        {
+            pathfinder.SetDestination(this.transform.position);
+        }
+        else
         {
             if (detectado() && !enRango())
                 perseguir();
@@ -60,7 +67,7 @@ public class Imp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.CompareTag("bala"))
+        if (other.gameObject.CompareTag("bala"))
         {
             dañoSXF.Play();
             --vida;
@@ -77,6 +84,25 @@ public class Imp : MonoBehaviour
                 Invoke(nameof(Destruir), 2.0f);
             }
         }
+        else
+        if (other.gameObject.CompareTag("Fire"))
+        {
+            dañoSXF.Play();
+            vida = vida - 3;
+            Debug.Log("Tocado");
+            if (!detectado())
+            {
+                transform.LookAt(player.transform.position);
+            }
+            if (vida <= 0)
+            {
+                muerto = true;
+                animator.SetBool("Muerto", true);
+                pathfinder.isStopped = true;
+                Invoke(nameof(Destruir), 2.0f);
+            }
+        }
+        else Debug.Log("tus muertos");
     }  
 
     private void Destruir() 
@@ -115,7 +141,7 @@ public class Imp : MonoBehaviour
     private void perseguir() 
     {
         pathfinder.SetDestination(player.transform.position);
-        animator.SetBool("Detectado",true);   
+        animator.SetBool("Run",true);   
         transform.LookAt(player.transform.position);     
     }
 
@@ -129,25 +155,36 @@ public class Imp : MonoBehaviour
 
     private void atacar()
     {
-        //Make sure enemy doesn't move
-        pathfinder.SetDestination(transform.position);
-       
-        transform.LookAt(player.transform.position);
-
         if (!alreadyAttacked)
         {
+            disparando = true;
+            animator.SetBool("Run",false);
             animator.SetBool("Disparo", true);
-            //Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            disparoSFX.Play();
-            Debug.Log("pium");
+            transform.LookAt(player.transform.position);
             alreadyAttacked = true;
+            Invoke(nameof(terminardisparo), 2.0f);
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
 
+    public void disparoAnimationEvent()
+    {
+        StartCoroutine("disparo");
+    }
+
+    public void disparo()
+    {
+        disparoSFX.Play();
+        Instantiate(fuego, mano.transform.position, transform.rotation);
+    }
+
+    private void terminardisparo()
+    {
+        disparando = false;
+    }
+
     private void ResetAttack()
     {
-        Debug.Log("juuju");
         alreadyAttacked = false;
     }
 
@@ -178,5 +215,4 @@ public class Imp : MonoBehaviour
         result = Vector3.zero;
         return false;
     }
-
 }

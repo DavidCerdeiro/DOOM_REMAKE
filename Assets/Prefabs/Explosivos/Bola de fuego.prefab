@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 164416, guid: 8aeb2c0224fe763499eed3ec0587162b, type: 3}
       propertyPath: m_Name
-      value: Meteor
+      value: Bola de fuego
       objectReference: {fileID: 0}
     - target: {fileID: 451472, guid: 8aeb2c0224fe763499eed3ec0587162b, type: 3}
       propertyPath: m_RootOrder
@@ -73,3 +73,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8aeb2c0224fe763499eed3ec0587162b, type: 3}
+--- !u!1 &6701513092844223900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 164416, guid: 8aeb2c0224fe763499eed3ec0587162b, type: 3}
+  m_PrefabInstance: {fileID: 6701513092844060636}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-2016648099857501965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701513092844223900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf018b7474e18e841bf35f8365ad4125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 0
