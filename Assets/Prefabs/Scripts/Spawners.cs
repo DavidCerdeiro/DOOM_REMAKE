@@ -18,7 +18,7 @@ public class Spawners : MonoBehaviour
             {
                 if (Vector3.Distance(player.transform.position, transform.position) <= 20f)
                 {
-                    Instantiate(enemy, transform.position, Quaternion.identity);
+                    Instantiate(enemy, transform.position,transform.rotation);
                     Debug.Log("Enemigo creado");
                     creado = true;
                 }

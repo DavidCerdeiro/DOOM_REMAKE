@@ -72,8 +72,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 13509832, guid: 8aeb2c0224fe763499eed3ec0587162b, type: 3}
+      propertyPath: m_Radius
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 13509832, guid: 8aeb2c0224fe763499eed3ec0587162b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 13509832, guid: 8aeb2c0224fe763499eed3ec0587162b, type: 3}
       propertyPath: m_IsTrigger
