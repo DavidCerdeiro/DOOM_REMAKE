@@ -87,7 +87,7 @@ public class FormerHuman : MonoBehaviour
         if (other.CompareTag("Fire"))
         {
             dañoSXF.Play();
-            vida = 0;
+            vida = vida - 3;
             Debug.Log("Tocado");
             if (!detectado())
             {
