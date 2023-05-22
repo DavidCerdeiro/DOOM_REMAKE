@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4689345990570408}
   - component: {fileID: 6229455285576497975}
+  - component: {fileID: 8246287339323386010}
   m_Layer: 0
   m_Name: botiquin
   m_TagString: botiquin
@@ -129,3 +130,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 68.83748, y: 40.542515, z: 54.04004}
   m_Center: {x: 0.9683937, y: 19.771263, z: 0.6646633}
+--- !u!114 &8246287339323386010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854425252707494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00eb396882c4e7478470cbe2f3e0f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx: {fileID: 0}
