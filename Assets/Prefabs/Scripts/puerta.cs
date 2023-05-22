@@ -6,6 +6,7 @@ public class puerta : MonoBehaviour
 {
     public GameObject jugador;
     private float distanciaObjetivo;
+    public AudioSource doorSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class puerta : MonoBehaviour
             if (distancia <= distanciaObjetivo)
             {
                 Debug.Log("Ahora se abriria la puerta");
+                doorSFX.Play();
                 StartCoroutine(AbrirPuerta());
             }
         }

@@ -13,7 +13,7 @@ public class movBalaEnemigo : MonoBehaviour
     void Start()
     {
         jugador = GameObject.FindWithTag("Player");
-        velocidad = 20.0f;
+        velocidad = 40.0f;
         vidaJugador = jugador.GetComponent<VidaJugador>();
     }
 
