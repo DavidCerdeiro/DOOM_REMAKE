@@ -464,6 +464,10 @@ PrefabInstance:
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1777387512, guid: f40ec86dab7a8704396c95e3ee5e44ec, type: 3}
+      propertyPath: bala
+      value: 
+      objectReference: {fileID: 2379200702607264974, guid: 51ed9e0f1a05c62479c3f971b07dfbd4, type: 3}
+    - target: {fileID: 1777387512, guid: f40ec86dab7a8704396c95e3ee5e44ec, type: 3}
       propertyPath: vida
       value: 3
       objectReference: {fileID: 0}
@@ -471,6 +475,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2060923980}
+    - target: {fileID: 1777387512, guid: f40ec86dab7a8704396c95e3ee5e44ec, type: 3}
+      propertyPath: pistola
+      value: 
+      objectReference: {fileID: 1861746283}
     - target: {fileID: 1777387512, guid: f40ec86dab7a8704396c95e3ee5e44ec, type: 3}
       propertyPath: "da\xF1oSXF"
       value: 
@@ -36483,7 +36491,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh66302
+  m_Name: pb_Mesh24786
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -38086,6 +38094,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7150587207410733405, guid: 7c1832ac18573cd4ea344ae5ed1d5cf5, type: 3}
   m_PrefabInstance: {fileID: 624604105}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1861746283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5829571971582986802, guid: f40ec86dab7a8704396c95e3ee5e44ec, type: 3}
+  m_PrefabInstance: {fileID: 107511403}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1911500166
 PrefabInstance:
