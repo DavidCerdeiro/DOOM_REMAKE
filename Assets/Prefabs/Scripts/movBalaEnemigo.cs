@@ -7,6 +7,8 @@ public class movBalaEnemigo : MonoBehaviour
     private GameObject jugador;
     public float velocidad;
     private VidaJugador vidaJugador;
+
+    private float dificultad = Difficulty.Instance.dificultad;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class movBalaEnemigo : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("he chocado con el jugador");
-            vidaJugador.recibirDañoArmor(20.0f);
+            vidaJugador.recibirDañoArmor(20.0f * dificultad);
         }
     }
 }
