@@ -8,6 +8,7 @@ public class movBalaEnemigo : MonoBehaviour
     public float velocidad;
     private VidaJugador vidaJugador;
 
+    private float distancia;
     private float dificultad = Difficulty.Instance.dificultad;
     // Start is called before the first frame update
     void Start()
@@ -15,12 +16,15 @@ public class movBalaEnemigo : MonoBehaviour
         jugador = GameObject.FindWithTag("Player");
         velocidad = 20.0f;
         vidaJugador = jugador.GetComponent<VidaJugador>();
+        distancia = 0.0f;
     }
 
     void Update()
     {
         float movDistancia = Time.deltaTime * velocidad;
         transform.Translate(Vector3.forward * movDistancia);
+        distancia = distancia + 0.1f;
+        if (distancia > 100) Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
