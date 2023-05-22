@@ -13,14 +13,14 @@ public class movBolaFuego : MonoBehaviour
     void Start()
     {
         jugador = GameObject.FindWithTag("Player");
-        velocidad = 20.0f;
+        velocidad = 10.0f;
         vidaJugador = jugador.GetComponent<VidaJugador>();
     }
 
     void Update()
     {
         float movDistancia = Time.deltaTime * velocidad;
-        transform.Translate(Vector3.right * movDistancia);
+        transform.Translate(Vector3.forward * movDistancia);
     }
 
     private void OnTriggerEnter(Collider other)
