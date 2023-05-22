@@ -67,7 +67,7 @@ public class FormerHuman : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.CompareTag("bala"))
+        if (other.gameObject.CompareTag("bala"))
         {
             dañoSXF.Play();
             --vida;
@@ -84,7 +84,8 @@ public class FormerHuman : MonoBehaviour
                 Invoke(nameof(Destruir), 2.0f);
             }
         }
-        if (other.CompareTag("Fire"))
+        else
+        if (other.gameObject.CompareTag("Fire"))
         {
             dañoSXF.Play();
             vida = vida - 3;
@@ -101,6 +102,7 @@ public class FormerHuman : MonoBehaviour
                 Invoke(nameof(Destruir), 2.0f);
             }
         }
+        else Debug.Log("tus muertos");
     }  
 
     private void Destruir() 
