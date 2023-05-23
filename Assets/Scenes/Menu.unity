@@ -457,7 +457,7 @@ RectTransform:
   m_GameObject: {fileID: 201893343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.379, y: 2.379, z: 2.379}
+  m_LocalScale: {x: 2.6102388, y: 2.6102388, z: 2.6102388}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 629953008}
@@ -590,7 +590,7 @@ RectTransform:
   m_GameObject: {fileID: 213718368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.327, y: 1.327, z: 1.327}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1171418998}
@@ -621,7 +621,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SOY UNA NENAZA
+  m_text: soy muy joven para morir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 580ac029da2794043a9dd4746d46b745, type: 2}
   m_sharedMaterial: {fileID: 5831765902715563452, guid: 580ac029da2794043a9dd4746d46b745, type: 2}
@@ -648,8 +648,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20.67
+  m_fontSizeBase: 20.67
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1153,7 +1153,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SANGREEEEE!!!!
+  m_text: Ultra-Violencia
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 580ac029da2794043a9dd4746d46b745, type: 2}
   m_sharedMaterial: {fileID: 5831765902715563452, guid: 580ac029da2794043a9dd4746d46b745, type: 2}
@@ -2421,7 +2421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Respetable
+  m_text: Hazme mucha pupa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 580ac029da2794043a9dd4746d46b745, type: 2}
   m_sharedMaterial: {fileID: 5831765902715563452, guid: 580ac029da2794043a9dd4746d46b745, type: 2}
@@ -2526,7 +2526,7 @@ RectTransform:
   m_GameObject: {fileID: 2130656086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.379, y: 2.379, z: 2.379}
+  m_LocalScale: {x: 2.757499, y: 2.757499, z: 2.757499}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2058792125}
@@ -2535,7 +2535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: 0}
+  m_AnchoredPosition: {x: 15, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2130656088
