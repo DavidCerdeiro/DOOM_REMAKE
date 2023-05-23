@@ -27,7 +27,6 @@ public class movBolaFuego : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("he chocado con el jugador");
             vidaJugador.recibirDañoArmor(20.0f * dificultad);
         }
     }
