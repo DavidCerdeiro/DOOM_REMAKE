@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 
-public class botones : MonoBehaviour
+public class reenvio : MonoBehaviour
 {
     void Start()
     {
