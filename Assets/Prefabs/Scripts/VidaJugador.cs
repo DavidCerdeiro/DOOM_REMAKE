@@ -5,8 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class VidaJugador : MonoBehaviour
 {
-    private float armorAct;
-    private float vidaAct;
+    public float armorAct;
+    public float vidaAct;
     public BarraVida barraVida;
     public BarraArmadura barraArmor;
     public AudioSource damageSound;
@@ -14,8 +14,8 @@ public class VidaJugador : MonoBehaviour
     public Sprite[] caras;
     void Start()
     {
-        vidaAct = GameManager.Instance.vida;
-        armorAct = GameManager.Instance.armor;
+        vidaAct = 100;
+        armorAct = 100;
         barraVida.SetMaxHealth(200);
         barraArmor.SetMaxArmor(200);
         cambioCara(vidaAct);

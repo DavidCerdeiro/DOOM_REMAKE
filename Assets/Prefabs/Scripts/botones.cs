@@ -1,25 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 
 public class botones : MonoBehaviour
 {
-    public Button reinicio;
-    public Button menu;
-    //Hacemos que según pulse un botón u otro cargue la escena correspondiente
     void Start()
     {
-        reinicio.onClick.AddListener(CargaMapa);
-        menu.onClick.AddListener(CargaMenu);
+        StartCoroutine(Espera());
     }
-    //Mapa en el que nos encontramos
-    void CargaMapa()
+    //Función de espera de 3 segundos, después nos devuelve al menú principal
+    private IEnumerator Espera()
     {
-        SceneManager.LoadScene("E1M1");
-    }
-    //Menú principal
-    void CargaMenu()
-    {
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("Menu");
     }
 }
