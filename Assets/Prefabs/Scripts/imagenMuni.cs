@@ -10,6 +10,9 @@ public class imagenMuni : MonoBehaviour
     public Sprite imagen2;
     public Sprite imagen3;
     public Sprite imagen4;
+    public Sprite imagen5;
+    public Sprite imagen6;
+    public Sprite imagen7;
 
     private Image imageComponent;
     // Start is called before the first frame update
@@ -40,6 +43,11 @@ public class imagenMuni : MonoBehaviour
                 imageComponent.sprite = imagen4;
                 break;
             default:
+                {
+                    if(valor > 4 && valor < 10) imageComponent.sprite = imagen5;
+                    else if (valor > 9 && valor < 15) imageComponent.sprite = imagen6;
+                    else imageComponent.sprite = imagen7;
+                }
                 // Asignar un sprite por defecto o manejar otro caso
                 break;
         }
