@@ -21,7 +21,6 @@ public class puerta : MonoBehaviour
             float distancia = Vector3.Distance(transform.position, jugador.transform.position);
             if (distancia <= distanciaObjetivo)
             {
-                Debug.Log("Ahora se abriria la puerta");
                 StartCoroutine(AbrirPuerta());
             }
         }

@@ -91,7 +91,7 @@ public class VidaJugador : MonoBehaviour
                     }else{
                         //Lo enviamos a la página de muerte
                         img.sprite = caras[0];
-                        SceneManager.LoadScene("Muerte");  
+                        SceneManager.LoadSceneAsync("Muerte");  
                     }
                 }
             }

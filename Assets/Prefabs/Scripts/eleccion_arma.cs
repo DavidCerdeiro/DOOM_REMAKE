@@ -26,11 +26,6 @@ public class eleccion_arma : MonoBehaviour
                 escopetaObject.SetActive(false);
                 pistolaObject.SetActive(true);
             }
-            else
-            {
-                // No se encontr? ning?n hijo con el tag "Escopeta"
-                Debug.Log("No se encontr? ning?n hijo con el tag 'Escopeta'");
-            }
         }
         if (Input.GetKey(KeyCode.Alpha2))
         {
@@ -44,11 +39,6 @@ public class eleccion_arma : MonoBehaviour
                 // Se encontr? un hijo con el tag "Escopeta"
                 escopetaObject.SetActive(true);
                 pistolaObject.SetActive(false);
-            }
-            else
-            {
-                // No se encontr? ning?n hijo con el tag "Escopeta"
-                Debug.Log("No se encontr? ning?n hijo con el tag 'Escopeta'");
             }
         }
     }

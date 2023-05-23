@@ -13,6 +13,6 @@ public class botones : MonoBehaviour
     private IEnumerator Espera()
     {
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
 }
