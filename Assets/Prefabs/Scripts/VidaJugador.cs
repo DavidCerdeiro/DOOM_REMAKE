@@ -14,8 +14,8 @@ public class VidaJugador : MonoBehaviour
     public Sprite[] caras;
     void Start()
     {
-        vidaAct = 100;
-        armorAct = 100;
+        vidaAct = GameManager.Instance.vida;
+        armorAct = GameManager.Instance.armor;
         barraVida.SetMaxHealth(200);
         barraArmor.SetMaxArmor(200);
         cambioCara(vidaAct);
