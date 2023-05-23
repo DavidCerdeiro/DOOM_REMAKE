@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class VidaJugador : MonoBehaviour
 {
     private float armorAct;
@@ -12,12 +12,6 @@ public class VidaJugador : MonoBehaviour
     public AudioSource damageSound;
     public Image img;
     public Sprite[] caras;
-    public Text textomuerte;
-    public Button reinicio;
-    public Button menu;
-    public Camera camara_muerte;
-    // Start is called before the first frame update
-
     void Start()
     {
         vidaAct = GameManager.Instance.vida;
@@ -27,12 +21,6 @@ public class VidaJugador : MonoBehaviour
         cambioCara(vidaAct);
         barraVida.SetHealth(100);
         barraArmor.SetArmor(100);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Aqui ira los daños
     }
     //Función auxiliar
     private float maximo(float x, float y)
@@ -64,7 +52,6 @@ public class VidaJugador : MonoBehaviour
     {
 
         float resguardo = armorAct;        //por si acaso es botiquin o paquete de vida
-
         armorAct -= daño;
         float armorFinal = maximo(armorAct, 0.0f);
         int aux = Mathf.FloorToInt(armorAct);
@@ -100,21 +87,12 @@ public class VidaJugador : MonoBehaviour
                     if(vida > 0.0f){
                         img.sprite = caras[3];
                     }else{
+                        //Lo enviamos a la página de muerte
                         img.sprite = caras[0];
-                        camara_muerte.gameObject.SetActive(true);
-                        StartCoroutine(muerte_espera());
+                        SceneManager.LoadScene("Muerte");  
                     }
                 }
             }
         }
     }
-    //Con esta función mostramos los botones para reiniciar el nivel, volver al menú y el texto de muerte
-    IEnumerator muerte_espera(){
-        yield return new WaitForSeconds(1);
-         this.gameObject.SetActive(false);
-        textomuerte.gameObject.SetActive(true);
-        reinicio.gameObject.SetActive(true);
-        menu.gameObject.SetActive(true);
-    }
-
 }
