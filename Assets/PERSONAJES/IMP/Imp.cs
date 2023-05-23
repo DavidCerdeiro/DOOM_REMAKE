@@ -75,7 +75,6 @@ public float viewRadius;
                 transform.LookAt(player.transform.position);
             }
             --vida;
-            Debug.Log("Tocado");
             if (vida <= 0)
             {
                 muertoSFX.Play();
@@ -90,7 +89,6 @@ public float viewRadius;
         {
             dañoSXF.Play();
             vida = 0;
-            Debug.Log("Tocado");
             if (vida <= 0)
             {
                 muerto = true;
@@ -99,7 +97,6 @@ public float viewRadius;
                 Invoke(nameof(Destruir), 2.0f);
             }
         }
-        else Debug.Log("tus muertos");
     }  
 
     public void Destruir() 

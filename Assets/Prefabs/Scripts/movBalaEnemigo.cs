@@ -31,7 +31,6 @@ public class movBalaEnemigo : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("he chocado con el jugador");
             vidaJugador.recibirDañoArmor(5.0f * dificultad);
             Destroy(gameObject);
         }

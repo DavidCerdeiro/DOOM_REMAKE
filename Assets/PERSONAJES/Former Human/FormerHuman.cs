@@ -71,7 +71,6 @@ public class FormerHuman : MonoBehaviour
         if (other.gameObject.CompareTag("bala"))
         {
             --vida;
-            Debug.Log("Tocado");
             if (!detectado())
             {
                 transform.LookAt(player.transform.position);
@@ -91,7 +90,6 @@ public class FormerHuman : MonoBehaviour
         {
             dañoSXF.Play();
             vida = vida - 3;
-            Debug.Log("Tocado");
             if (!detectado())
             {
                 transform.LookAt(player.transform.position);
@@ -104,7 +102,6 @@ public class FormerHuman : MonoBehaviour
                 Invoke(nameof(Destruir), 2.0f);
             }
         }
-        else Debug.Log("tus muertos");
     }  
 
     private void Destruir() 

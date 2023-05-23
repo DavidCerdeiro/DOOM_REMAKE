@@ -31,7 +31,6 @@ public class movBala : MonoBehaviour
     {
         if (other.CompareTag("Enemigo"))
         {
-            Debug.Log("he chocado con enemigo");
             other.SendMessage("tocado", damage, SendMessageOptions.DontRequireReceiver);
         }
     }
