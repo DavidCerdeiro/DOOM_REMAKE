@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 public class boton : MonoBehaviour
 {
     public Button volver;
-    // Start is called before the first frame update
+    //Cuando pulse el botón volvera a la escena del menú principal
     void Start()
     {
-        volver.onClick.AddListener(LoadMenuScene);
+        volver.onClick.AddListener(CargaMenu);
     }
-    void LoadMenuScene()
+    void CargaMenu()
     {
         SceneManager.LoadScene("Menu");
     }

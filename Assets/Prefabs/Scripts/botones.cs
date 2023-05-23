@@ -9,6 +9,7 @@ public class botones : MonoBehaviour
     {
         StartCoroutine(Espera());
     }
+
     //Función de espera de 3 segundos, después nos devuelve al menú principal
     private IEnumerator Espera()
     {

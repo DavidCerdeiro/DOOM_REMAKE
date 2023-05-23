@@ -6,8 +6,6 @@ public class add_ammo : MonoBehaviour
 {
     public imagenMuni imagen;
     public int municion;
-    // Start is called before the first frame update
-
     void Start()
     {
         municion = GameManager.Instance.municion;
@@ -18,8 +16,6 @@ public class add_ammo : MonoBehaviour
     {
         if (other.gameObject.CompareTag("municion"))
         {
-            //Mensaje original del juego al coger esta armadura
-            Debug.Log("municion de escopeta");
             municion++;
             GameManager.Instance.municion = municion;
             imagen.actualizar(municion);
