@@ -20,6 +20,7 @@ public float viewRadius;
     public AudioSource dañoSXF;
     public AudioSource disparoSFX;
     public AudioSource detectadoSFX;
+    public AudioSource muertoSFX;
 
     private float tiempoGrito;
  
@@ -69,31 +70,27 @@ public float viewRadius;
     {
         if (other.gameObject.CompareTag("bala"))
         {
-            dañoSXF.Play();
-            --vida;
-            Debug.Log("Tocado");
             if (!detectado())
             {
                 transform.LookAt(player.transform.position);
             }
+            --vida;
+            Debug.Log("Tocado");
             if (vida <= 0)
             {
+                muertoSFX.Play();
                 muerto = true;
                 animator.SetBool("Muerto",true);
                 pathfinder.isStopped = true;
-                Invoke(nameof(Destruir), 2.0f);
             }
+            else dañoSXF.Play();
         }
         else
         if (other.gameObject.CompareTag("Fire"))
         {
             dañoSXF.Play();
-            vida = vida - 3;
+            vida = 0;
             Debug.Log("Tocado");
-            if (!detectado())
-            {
-                transform.LookAt(player.transform.position);
-            }
             if (vida <= 0)
             {
                 muerto = true;
@@ -105,7 +102,7 @@ public float viewRadius;
         else Debug.Log("tus muertos");
     }  
 
-    private void Destruir() 
+    public void Destruir() 
     {
         Destroy(gameObject);
     } 

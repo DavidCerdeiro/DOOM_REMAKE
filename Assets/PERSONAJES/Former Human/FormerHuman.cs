@@ -20,6 +20,7 @@ public class FormerHuman : MonoBehaviour
     public AudioSource dañoSXF;
     public AudioSource disparoSFX;
     public AudioSource detectadoSFX;
+    public AudioSource muertoSFX;
 
     private float tiempoGrito;
  
@@ -69,7 +70,6 @@ public class FormerHuman : MonoBehaviour
     {
         if (other.gameObject.CompareTag("bala"))
         {
-            dañoSXF.Play();
             --vida;
             Debug.Log("Tocado");
             if (!detectado())
@@ -78,11 +78,13 @@ public class FormerHuman : MonoBehaviour
             }
             if (vida <= 0)
             {
+                muertoSFX.Play();
                 muerto = true;
                 animator.SetBool("Muerto",true);
                 pathfinder.isStopped = true;
                 Invoke(nameof(Destruir), 2.0f);
             }
+            else {dañoSXF.Play();}
         }
         else
         if (other.gameObject.CompareTag("Fire"))

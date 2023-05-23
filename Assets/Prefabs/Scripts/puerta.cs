@@ -22,7 +22,6 @@ public class puerta : MonoBehaviour
             if (distancia <= distanciaObjetivo)
             {
                 Debug.Log("Ahora se abriria la puerta");
-                doorSFX.Play();
                 StartCoroutine(AbrirPuerta());
             }
         }
@@ -30,6 +29,7 @@ public class puerta : MonoBehaviour
 
     private IEnumerator AbrirPuerta()
     {
+        doorSFX.Play();
         int i = 0;
 
         while(i < 400)
