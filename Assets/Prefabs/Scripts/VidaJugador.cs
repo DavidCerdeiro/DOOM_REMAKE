@@ -19,8 +19,10 @@ public class VidaJugador : MonoBehaviour
         barraVida.SetMaxHealth(200);
         barraArmor.SetMaxArmor(200);
         cambioCara(vidaAct);
-        barraVida.SetHealth(100);
-        barraArmor.SetArmor(100);
+        int aux = Mathf.FloorToInt(vidaAct);
+        barraVida.SetHealth(aux);
+        aux = Mathf.FloorToInt(armorAct);
+        barraArmor.SetArmor(aux);
     }
     //Función auxiliar
     private float maximo(float x, float y)
