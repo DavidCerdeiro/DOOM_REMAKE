@@ -10,11 +10,9 @@ public class Ascensor : MonoBehaviour
     private float distanciaObjetivo;
     private Vector3 inicio;
     private Vector3 final;
-    private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         distanciaObjetivo = 3.0f;
         inicio = new Vector3(-9.39000034f, -0.100000001f, 20.0300007f);
         final = new Vector3(-9.39000034f, 9.80800042f, 20.0300007f);
@@ -24,27 +22,31 @@ public class Ascensor : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float distancia = Vector3.Distance(transform.position, jugador.transform.position);
-        if (distancia <= distanciaObjetivo)
+        if (Input.GetKey(KeyCode.E))
         {
-            Debug.Log("Ascensor sube");
-            StartCoroutine(SubirAscensor());
-        }
+            float distancia = Vector3.Distance(transform.position, jugador.transform.position);
+            if (distancia <= distanciaObjetivo)
+            {
+                Debug.Log("Ascensor sube");
+                StartCoroutine(SubirAscensor());
+            }
+        } 
     }
 
     private IEnumerator SubirAscensor()
     {
-        //rb.WakeUp();
         int i = 0;
-        rb.AddForce(Vector3.up * 0.2f, ForceMode.Impulse);
-        jugador.transform.position = transform.position + new Vector3(0.0f, 0.3f, 0.0f);
+        jugador.transform.position = transform.position + new Vector3(0.0f, 1.0f, 0.0f);
         while (transform.position.y < final.y)
         {
+            jugador.transform.position = jugador.transform.position + new Vector3(0.0f, 0.0025f, 0.0f);
+            transform.position = transform.position + new Vector3(0.0f, 0.0015f, 0.0f);
+            yield return new WaitForSeconds(0.0035f);
         }
-        rb.Sleep();
-        while (i < 200)
+        while(i < 400)
         {
             transform.position = transform.position + new Vector3(0.0f, 0.0f, -0.0015f);
+            i++;
             yield return new WaitForSeconds(0.0035f);
         }
 

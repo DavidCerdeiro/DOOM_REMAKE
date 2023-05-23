@@ -10,7 +10,7 @@ public class puerta : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        distanciaObjetivo = 2.0f;
+        distanciaObjetivo = 3.0f;
     }
 
     // Update is called once per frame
