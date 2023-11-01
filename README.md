@@ -1,2 +1,10 @@
 # DOOM_REMAKE
-En este proyecto se encuentra el código fuente completo de nuestro proyecto, un remake de DOOM 1993, en el cual nos vamos a centrar en la recreación de los dos primeros mapas del primer mundo de este juego debido a las limitaciones de tiempo.
+> Proyecto de prácticas de la asignatura Desarrollo de Sistemas Hipermedias de la Universidad de Cádiz.
+
+Este proyecto se trata de un pequeño remake de ***DOOM 1993*** realizado en Unity, en el cual nos centramos en la recreación de los dos primeros mapas del primer mundo de este juego debido a las limitaciones temporales por el transcurso del curso.
+## Grupo de trabajo
+@djcandi
+
+@Raudulento
+
+@Yo
